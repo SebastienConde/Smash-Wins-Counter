@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SmashwinscounterApplication {
+public class SmashWinsCounterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SmashwinscounterApplication.class, args);
+		SpringApplication.run(SmashWinsCounterApplication.class, args);
 	}
 
 }
