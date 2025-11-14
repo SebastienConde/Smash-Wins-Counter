@@ -15,9 +15,9 @@ public class TestData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Win win = new Win();
-        win.setWinningPlayer("Mario");
+        win.setWinningPlayer("Sebastien");
         win.setWinningCharacter(Character.MARIO);
-        win.setLosingPlayer("Link");
+        win.setLosingPlayer("Evan");
         win.setLosingCharacter(Character.LINK);
 
         winRepository.save(win);
