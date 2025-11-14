@@ -3,7 +3,7 @@ FROM gradle:8.7-jdk17 AS builder
 WORKDIR /app
 
 # Copy Gradle files first to cache dependencies
-COPY build.gradle settings.gradle gradle.properties ./
+#COPY build.gradle settings.gradle gradle.properties ./
 COPY gradle ./gradle
 
 # Download dependencies
