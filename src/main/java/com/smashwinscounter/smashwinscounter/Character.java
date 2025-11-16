@@ -1,36 +1,116 @@
 package com.smashwinscounter.smashwinscounter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
 public enum Character {
-    MARIO, DONKEY_KONG, LINK,
-    SAMUS, DARK_SAMUS, YOSHI,
-    KIRBY, FOX, PIKACHU,
-    LUIGI, NESS, CAPTAIN_FALCON,
-    JIGGLYPUFF, PEACH, DAISY,
-    BOWSER, ICE_CLIMBERS, SHEIK,
-    ZELDA, DR_MARIO, PICHU,
-    FALCO, MARTH, LUCINA,
-    YOUNG_LINK, GANONDORF, MEWTWO,
-    ROY, CHROM, MR_GAME_AND_WATCH,
-    META_KNIGHT, PIT, DARK_PIT,
-    ZERO_SUIT_SAMUS, WARIO, SNAKE,
-    IKE, POKEMON_TRAINER, DIDDY_KONG,
-    LUCAS, SONIC, KING_DEDEDE,
-    OLIMAR, LUCARIO, ROB,
-    TOON_LINK, WOLF, VILLAGER,
-    MEGA_MAN, WII_FIT_TRAINER, ROSALINA_AND_LUMA,
-    LITTLE_MAC, GRENINJA, MII_FIGHTER,
-    PALUTENA, PAC_MAN, ROBIN,
-    SHULK, BOWSER_JR, DUCK_HUNT,
-    RYU, KEN, CLOUD,
-    CORRIN, BAYONETTA,
-    INKLING, RIDLEY, SIMON, RICHTER,
-    KING_K_ROOL, ISABELLE, INCINEROAR,
+    MARIO("Mario"),
+    DONKEY_KONG("Donkey Kong"),
+    LINK("Link"),
+    SAMUS("Samus"),
+    DARK_SAMUS("Dark Samus"),
+    YOSHI("Yoshi"),
+    KIRBY("Kirby"),
+    FOX("Fox"),
+    PIKACHU("Pikachu"),
+    LUIGI("Luigi"),
+    NESS("Ness"),
+    CAPTAIN_FALCON("Captain Falcon"),
 
-    // Special characters (we don't have these)
-    PIRANHA_PLANT, JOKER, HERO,
-    BANJO_AND_KAZOOIE, TERRY, BYLETH,
+    JIGGLYPUFF("Jigglypuff"),
+    PEACH("Peach"),
+    DAISY("Daisy"),
+    BOWSER("Bowser"),
+    ICE_CLIMBERS("Ice Climbers"),
+    SHEIK("Sheik"),
+    ZELDA("Zelda"),
+    DR_MARIO("Dr. Mario"),
+    PICHU("Pichu"),
 
-    // Special characters we do have
-    MIN_MIN, STEVE, SEPHIROTH,
-    PYRA_MYTHRA, KAZUYA, SORA
+    FALCO("Falco"),
+    MARTH("Marth"),
+    LUCINA("Lucina"),
+    YOUNG_LINK("Young Link"),
+    GANONDORF("Ganondorf"),
+    MEWTWO("Mewtwo"),
+
+    ROY("Roy"),
+    CHROM("Chrom"),
+    MR_GAME_AND_WATCH("Mr. Game & Watch"),
+    META_KNIGHT("Meta Knight"),
+    PIT("Pit"),
+    DARK_PIT("Dark Pit"),
+
+    ZERO_SUIT_SAMUS("Zero Suit Samus"),
+    WARIO("Wario"),
+    SNAKE("Snake"),
+    IKE("Ike"),
+    POKEMON_TRAINER("Pokémon Trainer"),
+    DIDDY_KONG("Diddy Kong"),
+
+    LUCAS("Lucas"),
+    SONIC("Sonic"),
+    KING_DEDEDE("King Dedede"),
+    OLIMAR("Olimar"),
+    LUCARIO("Lucario"),
+    ROB("R.O.B."),
+
+    TOON_LINK("Toon Link"),
+    WOLF("Wolf"),
+    VILLAGER("Villager"),
+    MEGA_MAN("Mega Man"),
+    WII_FIT_TRAINER("Wii Fit Trainer"),
+    ROSALINA_AND_LUMA("Rosalina & Luma"),
+
+    LITTLE_MAC("Little Mac"),
+    GRENINJA("Greninja"),
+    MII_FIGHTER("Mii Fighter"),
+    PALUTENA("Palutena"),
+    PAC_MAN("Pac-Man"),
+    ROBIN("Robin"),
+
+    SHULK("Shulk"),
+    BOWSER_JR("Bowser Jr."),
+    DUCK_HUNT("Duck Hunt"),
+
+    RYU("Ryu"),
+    KEN("Ken"),
+    CLOUD("Cloud"),
+    CORRIN("Corrin"),
+    BAYONETTA("Bayonetta"),
+
+    INKLING("Inkling"),
+    RIDLEY("Ridley"),
+    SIMON("Simon"),
+    RICHTER("Richter"),
+    KING_K_ROOL("King K. Rool"),
+    ISABELLE("Isabelle"),
+    INCINEROAR("Incineroar"),
+
+    PIRANHA_PLANT("Piranha Plant"),
+    JOKER("Joker"),
+    HERO("Hero"),
+    BANJO_AND_KAZOOIE("Banjo & Kazooie"),
+    TERRY("Terry"),
+    BYLETH("Byleth"),
+
+    MIN_MIN("Min Min"),
+    STEVE("Steve"),
+    SEPHIROTH("Sephiroth"),
+    PYRA_MYTHRA("Pyra / Mythra"),
+    KAZUYA("Kazuya"),
+    SORA("Sora");
+
+    private final String displayName;
+
+    Character(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
 }
+
