@@ -21,10 +21,6 @@ public class WinService {
         return win;
     }
 
-    public Win getWinById(Long id) {
-        return winRepository.findById(id).orElse(null);
-    }
-
     public List<Win> getAllWins() {
         return winRepository.findAll();
     }
