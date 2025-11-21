@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/wins")
-@CrossOrigin(origins = "http://localhost:5173")// base URL
+@CrossOrigin(origins = "http://smash-wins-counter-production.up.railway.app")// base URL
 public class WinController {
 
     private final WinService winService;
