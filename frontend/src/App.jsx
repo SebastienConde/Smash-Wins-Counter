@@ -9,7 +9,7 @@ function App() {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:8080/wins/characters")
+        fetch("https://smash-wins-counter-production.up.railway.app/wins/characters")
             .then(res => res.json())
             .then(data => {
                 setCharacters(data);
@@ -29,7 +29,7 @@ function App() {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/wins/add", {
+            const response = await fetch("https://smash-wins-counter-production.up.railway.app/wins/add", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(win)
