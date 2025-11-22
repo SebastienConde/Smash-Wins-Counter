@@ -6,7 +6,10 @@ import com.smashwinscounter.smashwinscounter.WinRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class WinService {
@@ -40,4 +43,14 @@ public class WinService {
         return totalGames == 0 ? 0.00 : Math.round((double) wins / totalGames * 100.0) / 100.0;
     }
 
+    // Get a list of all the unique players in the table
+    public List<String> getAllUniquePlayers() {
+        List<String> winners = winRepository.findDistinctWinningPlayers();
+        List<String> losers = winRepository.findDistinctLosingPlayers();
+
+        Set<String> allPlayers = new HashSet<>(winners);
+        allPlayers.addAll(losers);
+
+        return new ArrayList<>(allPlayers);
+    }
 }

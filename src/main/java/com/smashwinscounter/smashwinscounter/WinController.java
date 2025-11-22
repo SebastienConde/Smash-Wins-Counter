@@ -52,8 +52,14 @@ public class WinController {
     }
 
     // get winrate of a player against another
-    @GetMapping("winrate/{player1}/vs/{player2}")
+    @GetMapping("/winrate/{player1}/vs/{player2}")
     public double getWinRate(@PathVariable("player1") String player1, @PathVariable("player2") String player2) {
         return winService.winRateAgainstPlayer(player1, player2);
+    }
+
+    // get all unique players in the db
+    @GetMapping("/players")
+    public List<String> getPlayers() {
+        return winService.getAllUniquePlayers();
     }
 }
