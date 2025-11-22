@@ -1,10 +1,5 @@
 package com.smashwinscounter.smashwinscounter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
-
 public enum Character {
     MARIO("Mario"),
     DONKEY_KONG("Donkey Kong"),
