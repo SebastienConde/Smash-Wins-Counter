@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface WinRepository extends JpaRepository<Win, Long> {
-    // Custom queries, only for methods that query the db
+    // Custom queries, only for methods that directly query the db
 
     @Query("SELECT COUNT(w) FROM Win w WHERE w.winningPlayer = :player")
     int countWinsByPlayer(@Param("player") String player);
