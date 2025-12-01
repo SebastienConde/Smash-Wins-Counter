@@ -27,39 +27,41 @@ public class WinController {
                 .collect(Collectors.toList());
     }
 
+    // get list of all players
+    @GetMapping("/players")
+    public List<PlayerDTO> getPlayers() {
+        return Arrays.stream(Player.values())
+                .map(c -> new PlayerDTO(c.name(), c.getDisplayName()))
+                .collect(Collectors.toList());
+    }
+
     // get amount of games played by one player
     @GetMapping("/totals/{player}")
-    public int getTotalGames(@PathVariable("player") String player) {
+    public int getTotalGames(@PathVariable("player") Player player) {
         return winService.countGamesByPlayer(player);
     }
 
     // get amount of games won by one player
     @GetMapping("/total/wins/{player}")
-    public int getTotalWins(@PathVariable("player") String player) {
+    public int getTotalWins(@PathVariable("player") Player player) {
         return winService.countGamesByPlayer(player);
     }
 
     // get amount of games lost by one player
     @GetMapping("/total/losses/{player}")
-    public int getTotalLosses(@PathVariable("player") String player) {
+    public int getTotalLosses(@PathVariable("player") Player player) {
         return getTotalGames(player) -  getTotalWins(player);
     }
 
     // get winrate of a single player
     @GetMapping("/winrate/{player}")
-    public double getWinRate(@PathVariable("player") String player) {
+    public double getWinRate(@PathVariable("player") Player player) {
         return winService.getWinRate(player);
     }
 
     // get winrate of a player against another
     @GetMapping("/winrate/{player1}/vs/{player2}")
-    public double getWinRate(@PathVariable("player1") String player1, @PathVariable("player2") String player2) {
+    public double getWinRate(@PathVariable("player1") Player player1, @PathVariable("player2") Player player2) {
         return winService.winRateAgainstPlayer(player1, player2);
-    }
-
-    // get all unique players in the db
-    @GetMapping("/players")
-    public List<String> getPlayers() {
-        return winService.getAllUniquePlayers();
     }
 }

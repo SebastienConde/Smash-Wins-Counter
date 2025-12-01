@@ -13,20 +13,14 @@ public interface WinRepository extends JpaRepository<Win, Long> {
     // Custom queries, only for methods that directly query the db
 
     @Query("SELECT COUNT(w) FROM Win w WHERE w.winningPlayer = :player")
-    int countWinsByPlayer(@Param("player") String player);
+    int countWinsByPlayer(@Param("player") Player player);
 
     @Query("SELECT COUNT(w) FROM Win w WHERE w.losingPlayer = :player")
-    int countLossesByPlayer(@Param("player") String player);
+    int countLossesByPlayer(@Param("player") Player player);
 
     @Query("SELECT COUNT(w) FROM Win w WHERE w.winningPlayer = :player1 AND w.losingPlayer = :player2")
-    int winsAgainstPlayer(@Param("player1") String player1, @Param("player2") String player2);
+    int winsAgainstPlayer(@Param("player1") Player player1, @Param("player2") Player player2);
 
     @Query("SELECT COUNT(w) FROM Win w WHERE (w.winningPlayer = :player1 AND w.losingPlayer = :player2) " + "OR (w.winningPlayer = :player2 AND w.losingPlayer = :player1)")
-    int totalMatchesBetween(@Param("player1") String player1, @Param("player2") String player2);
-
-    @Query("SELECT DISTINCT w.winningPlayer FROM Win w")
-    List<String> findDistinctWinningPlayers();
-
-    @Query("SELECT DISTINCT w.losingPlayer FROM Win w")
-    List<String> findDistinctLosingPlayers();
+    int totalMatchesBetween(@Param("player1") Player player1, @Param("player2") Player player2);
 }
